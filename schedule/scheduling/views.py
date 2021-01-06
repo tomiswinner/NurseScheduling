@@ -26,6 +26,6 @@ class NurseView(View):
     }
     context['name'] = context['name'] + 'ひゃっはーなっしー'
     
-    return render(request, 'scheduling/index.html',context)
+    return render(request, 'scheduling/testing.html',context)
 
 nurse = NurseView.as_view()
