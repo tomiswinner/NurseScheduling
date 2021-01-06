@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+  <p>Hello!!</p>
+  
+  <form action = "{% url 'scheduling:nurse' %}" method = "post">
+  {% csrf_token %}
+  <div>
+    <label for = "name">名前</label>
+    <input type = "text" id= "name" name = "name" value = "{{name}}">
+  </div>
+  <div>
+    <label for= "email">メアド</label>
+    <input type ="mail" id = "email" name= "email" value ="{{email}}">
+  </div>
+  <div>
+    <label for="message">内容</label>
+    <textarea id="message" name= "message">{{message}}</textarea>
+  </div>
+  <input type="submit" value="送信">
+
+  </form>
+  
+</body>
+</html>
