@@ -12,8 +12,8 @@ import openpyxl as opxl
 import jpholiday #土日はカウントされない。祝日のみ>
 
 
-フォーマット = opxl.load_workbook(r'C:\Users\mouse\Desktop\Python\計休.xlsx')
-シート1 = フォーマット['format']
+# フォーマット = opxl.load_workbook(r'C:\Users\mouse\Desktop\Python\計休.xlsx')
+# シート1 = フォーマット['format']
 
 
 
@@ -57,88 +57,83 @@ def makeDaysSetOfMonth():
 
 
 
-def getHolidayReq():
-    global シート1
-    希望休リスト =[]
-    for i in range(2,7):
+# def getHolidayReq():
+#     global シート1
+#     希望休リスト =[]
+#     for i in range(2,7):
         
-        tempList = []
+#         tempList = []
         
-        for i2,elem in enumerate(シート1[i]):
-            if elem.value:
-                tempList.append(elem.value)
+#         for i2,elem in enumerate(シート1[i]):
+#             if elem.value:
+#                 tempList.append(elem.value)
         
-        希望休リスト.append(tempList)
+#         希望休リスト.append(tempList)
     
-    # print(希望休リスト
-    return 希望休リスト
+#     # print(希望休リスト
+#     return 希望休リスト
 
-def getNumOfMemberWorkingWeekDay():
-    global シート1
-    print(シート1[15][1].value)
-    return シート1[15][1].value
+# def getNumOfMemberWorkingWeekDay():
+#     global シート1
+#     print(シート1[15][1].value)
+#     return シート1[15][1].value
 
-def getNumOfMemberWorkingWeekEnd():
-    global シート1
-    return シート1[16][1].value
+# def getNumOfMemberWorkingWeekEnd():
+#     global シート1
+#     return シート1[16][1].value
 
 
 
-def getWorkdayReq():
-    global シート1
-    マスト勤務リスト =[]
+# def getWorkdayReq():
+#     global シート1
+#     マスト勤務リスト =[]
     
-    for i in range(9,14):
-        tempList= []
-        for _, elem in enumerate(シート1[i]):
-            if elem.value:
-                tempList.append(elem.value)
+#     for i in range(9,14):
+#         tempList= []
+#         for _, elem in enumerate(シート1[i]):
+#             if elem.value:
+#                 tempList.append(elem.value)
         
-        マスト勤務リスト.append(tempList)
+#         マスト勤務リスト.append(tempList)
     
-    print(マスト勤務リスト,'yeah')
-    return マスト勤務リスト
+#     print(マスト勤務リスト,'yeah')
+#     return マスト勤務リスト
 
-getWorkdayReq()
+# getWorkdayReq()
 
 
-# getHolidayReq()
+# # getHolidayReq()
 
-def decideWorkMem():
-    global シート1
-    workMembersList = []
-    for i in range(2,7):    
-        workMembersList.append(シート1[i][0].value)
+# def decideWorkMem():
+#     global シート1
+#     workMembersList = []
+#     for i in range(2,7):    
+#         workMembersList.append(シート1[i][0].value)
     
-    # if isListHasDuplicate(workMembersList):
-    #ここ、excel側でエラーを投げたい。どうやろう？
-    return workMembersList
+#     # if isListHasDuplicate(workMembersList):
+#     #ここ、excel側でエラーを投げたい。どうやろう？
+#     return workMembersList
 
 
-def isListHasDuplicate(sequence):
-    return len(sequence) == len(set(sequence))
+# def isListHasDuplicate(sequence):
+#     return len(sequence) == len(set(sequence))
 
 
-def convertNameIntoNum(array,workArray):
-    for _,elem in enumerate(array):
-        # print(elem) # 一次元めの配列が返ってくる
-        elem[0] = workArray.index(elem[0])  #workmemの順番に対応した位置が返ってくる（重複がなければ）
-        # print(array) #これで順番の数字に変わった
+# def convertNameIntoNum(array,workArray):
+#     for _,elem in enumerate(array):
+#         # print(elem) # 一次元めの配列が返ってくる
+#         elem[0] = workArray.index(elem[0])  #workmemの順番に対応した位置が返ってくる（重複がなければ）
+#         # print(array) #これで順番の数字に変わった
 
 
-def Main():
+# def Main():
     
-    global workMembers
-    workMembers = decideWorkMem()
-    global 希望休リスト
-    希望休リスト = getHolidayReq()
-    convertNameIntoNum(希望休リスト,workMembers)
-
-
-
-
-
-Main()
+#     global workMembers
+#     workMembers = decideWorkMem()
+#     global 希望休リスト
+#     希望休リスト = getHolidayReq()
+#     convertNameIntoNum(希望休リスト,workMembers)
+# Main()
 
 def temporal():
     dateset = makeDateSetOfMonth(strDate)
