@@ -26,9 +26,13 @@ class NurseView(View):
       'email':request.POST['email'],
       'message':'Post method!',
     }
-    context['name'] = context['name'] + 'ひゃっはーなっしー'
-    context['message'] = しふと.makeDateSetOfMonth(しふと.datetime.datetime.strptime(request.POST['dates'],"%Y-%m-%d"))
+    
     #postでくるstr日付をdatetimeに変換して、datesを生成。
+    作成日 = しふと.datetime.datetime.strptime(request.POST['dates'],"%Y-%m-%d")
+    #月の日付と、休日or平日のリストを取得
+    context['message'] = しふと.makeDateSetOfMonth(作成日)
+    context['email']  = しふと.makeDaysSetOfMonth(作成日)
+    
 
     return render(request, 'scheduling/result.html',context)
 

@@ -1,10 +1,15 @@
+{% load static %}
 <html>
 <head>
+  <link rel = "stylesheet" href ="{% static 'css/test.css' %}">
 </head>
 <body>
   <p>てすとだＹＯ</p>
   <p>{{name}}</p>
   <p>{{message}}</p>
   <p>{{dates}}</p>
+  <p>{{email}}</p>
+
+  <script src = "{% static 'JS/test.js' %}"></script>
 </body>
 </html>

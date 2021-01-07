@@ -34,16 +34,15 @@ def makeDateSetOfMonth(timeDate):
     # print(list2)
     return list2
 
-def makeDaysSetOfMonth():
-    today = datetime.datetime.now()
+def makeDaysSetOfMonth(timeDate):
+    OpeDay = timeDate
     cl = Calendar(firstweekday=0)
-    list1 = list(cl.itermonthdates(today.year,today.month))
+    list1 = list(cl.itermonthdates(OpeDay.year,OpeDay.month))
     for elem in reversed(list1):
-        if not elem.month == today.month:
+        if not elem.month == OpeDay.month:
             list1.remove(elem) 
     
     list2 = []
-
     for _,elem in enumerate(list1):
         
         if jpholiday.is_holiday(elem) or elem.weekday() >= 5:
