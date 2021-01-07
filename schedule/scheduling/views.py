@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from django.views import View
-from . import testes1
+import しふと
+
 # Create your views here.
 
 
@@ -25,7 +26,8 @@ class NurseView(View):
       'message':'Post method!'
     }
     context['name'] = context['name'] + 'ひゃっはーなっしー'
-    
-    return render(request, 'scheduling/testing.html',context)
+    context['message'] = しふと.makeDateSetOfMonth()
+
+    return render(request, 'scheduling/result.html',context)
 
 nurse = NurseView.as_view()
