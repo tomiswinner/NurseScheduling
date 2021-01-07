@@ -22,11 +22,13 @@ class NurseView(View):
   def post(self,request,*args,**kwargs):
     context ={
       'name':request.POST['name'],
+      'dates':request.POST['dates'],
       'email':request.POST['email'],
-      'message':'Post method!'
+      'message':'Post method!',
     }
     context['name'] = context['name'] + 'ひゃっはーなっしー'
-    context['message'] = しふと.makeDateSetOfMonth()
+    context['message'] = しふと.makeDateSetOfMonth(しふと.datetime.datetime.strptime(request.POST['dates'],"%Y-%m-%d"))
+    #postでくるstr日付をdatetimeに変換して、datesを生成。
 
     return render(request, 'scheduling/result.html',context)
 
