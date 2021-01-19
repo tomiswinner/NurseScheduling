@@ -2,9 +2,8 @@
 <head>
 </head>
 <body>
-  <p>Hello!!</p>
-  
-  <form action = "{% url 'scheduling:nurse' %}" method = "post">
+  <p>Hello!!</p>  
+  <form action = "{% url 'scheduling:WorkingTable' %}" method = "post">
   {% csrf_token %}
   <div>
     <label for = "name">名前</label>
@@ -15,7 +14,7 @@
     <input id="dates" name= "dates" type = "date" value = "{{dates}}">
   </div>
   <div>
-    <label for= "email">メアド</label>
+    <label for= "email">メンバー</label>
     <input type ="mail" id = "email" name= "email" value ="{{email}}">
   </div>
   <div>

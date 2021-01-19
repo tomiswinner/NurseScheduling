@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <p>登録ふぉーむ</p>
+  <form method = "POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type = "submit" name = "submit">submit</button>
+  </form>
+  <p>{{message}}</p>
+</body>
+</html>

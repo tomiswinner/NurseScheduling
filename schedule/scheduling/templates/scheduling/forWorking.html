@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+
+<div id= "workingtable">
+  <table>
+    <tr>
+      <th>日付</th>
+      <th></th>
+    </tr>
+    
+    <tbody>
+      {% for day in datesList %}
+      <tr><td>{{day}}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
